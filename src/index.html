@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>PlayGround Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot" aria-hidden="true"></span>
+      <span class="brand-name">PlayGround <b>Studio</b></span>
+    </div>
+    <nav class="actions" aria-label="Editor actions">
+      <button id="btn-start" class="btn btn-primary" type="button">Start</button>
+      <button id="btn-add-image" class="btn" type="button">Add image</button>
+      <button id="btn-add-text" class="btn" type="button">Add text</button>
+      <button id="btn-add-shape" class="btn" type="button">Add shape</button>
+      <button id="btn-clear" class="btn btn-ghost" type="button">Clear</button>
+      <button id="btn-download" class="btn" type="button">Download</button>
+      <input id="file-input" type="file" accept="image/*" hidden>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="stage-column">
+      <div class="stage-frame">
+        <canvas id="stage" width="960" height="600" aria-label="Canvas stage"></canvas>
+      </div>
+      <p class="hint">Drag any layer on the canvas. Select a layer to edit its properties.</p>
+    </section>
+
+    <aside class="panel" aria-label="Editor panels">
+      <section class="panel-block">
+        <h2>Layers</h2>
+        <ul id="layer-list" class="layer-list"></ul>
+      </section>
+      <section class="panel-block">
+        <h2>Properties</h2>
+        <div id="props" class="props">
+          <p class="muted">Select a layer to edit it.</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="statusbar">
+    <span id="status">Ready</span>
+    <span id="layer-count"></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
